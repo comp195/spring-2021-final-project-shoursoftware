@@ -1,6 +1,9 @@
 using Platformer.Core;
 using Platformer.Mechanics;
 using Platformer.Model;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 namespace Platformer.Gameplay
 {
@@ -19,6 +22,12 @@ namespace Platformer.Gameplay
         {
             model.player.animator.SetTrigger("victory");
             model.player.controlEnabled = false;
+            DOVirtual.DelayedCall(3, ToLevel2);
+        }
+
+        void ToLevel2()
+        {
+            SceneManager.LoadScene("Level2");
         }
     }
 }
