@@ -22,12 +22,29 @@ namespace Platformer.Gameplay
         {
             model.player.animator.SetTrigger("victory");
             model.player.controlEnabled = false;
-            DOVirtual.DelayedCall(3, ToLevel2);
+            DOVirtual.DelayedCall(3, ToNextLevel);
         }
 
-        void ToLevel2()
+        void ToNextLevel()
         {
-            SceneManager.LoadScene("Level2");
+            Scene currentLevel = SceneManager.GetActiveScene();
+            switch (currentLevel.name)
+            {
+                case "Level1":
+                    SceneManager.LoadScene("Level2");
+                    break;
+                case "Level2":
+                    SceneManager.LoadScene("Level3");
+                    break;
+                case "Level3":
+                    SceneManager.LoadScene("Level4");
+                    break;
+                case "Level4":
+                    SceneManager.LoadScene("Level5");
+                    break;
+                case "Level5":
+                    break;
+            }
         }
     }
 }
