@@ -1524,4 +1524,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level3.unity
   - Assets/Scenes/Level4.unity
   - Assets/Scenes/Level5.unity
-  playerPath: C:/Users/Jacob/SeniorProject/Builds/Senior Project.exe
+  playerPath: C:/Users/Jacob/SeniorProject/Build/Senior Project.exe
